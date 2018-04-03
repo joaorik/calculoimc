@@ -27,29 +27,20 @@ public class calculoIMC extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String altura = request.getParameter("altura");
-        String peso = request.getParameter("peso");
-        
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet calculoIMC</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet calculoIMC at " + request.getContextPath() + "</h1>");
-            out.println("Altura: " + altura + "<br>");
-            out.println("Peso: " + peso + "<br>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        
+    }
+
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
         String condicao;
         String altura = request.getParameter("altura");
         String peso = request.getParameter("peso");
@@ -78,13 +69,6 @@ public class calculoIMC extends HttpServlet {
         RequestDispatcher res = request.getRequestDispatcher("result.jsp");
 
         res.forward(request, response);
-    }
-
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**

@@ -1,21 +1,36 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="br">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Calculo IMC</title>
+        <!-- CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .center-block {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
     </head>
     <body>
-        <center>
-            <h2>Informe seus dados</h2>
-            <form method="GET" action="calculoIMC">
-                    Altura:
-                    <input type="text" name="altura" /><br><br>
-                    Peso:
-                    <input type="text" name="peso" /><br><br>
-                    <input type="submit" value="Calcular" />
-
+        <div class="col-md-4 center-block">
+            <h4>Informe seus dados</h4>
+            <form action="calculoIMC" method="POST">
+                <div class="form-group">
+                    <label for="altura">Altura:</label>
+                    <input type="text" class="form-control" name="altura" id="altura" placeholder="Exemplo: 1.60">
+                    <p class="small">Utilize o ponto, não use a virgula</p>
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso:</label>
+                    <input type="text" class="form-control" name="peso" id="peso" placeholder="Exemplo: 60">
+                    <p class="small">Utilize somente número inteiro sem virgula e ponto</p>
+                </div>
+                <button type="submit" class="btn btn-info">Calcular</button>
             </form>
-        </center>
+        </div>
     </body>
 </html>
