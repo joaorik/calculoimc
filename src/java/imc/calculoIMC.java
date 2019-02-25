@@ -26,27 +26,25 @@ public class calculoIMC extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String condicao;
         String altura = request.getParameter("altura");
         String peso = request.getParameter("peso");
 
         float imc = Float.parseFloat(peso) / (Float.parseFloat(altura) * Float.parseFloat(altura));
-        
+
         float im = (float) Math.round(imc);
 
         if (im < 18) {
@@ -62,10 +60,10 @@ public class calculoIMC extends HttpServlet {
         } else {
             condicao = "Obesidade grau 3";
         }
-        
+
         request.setAttribute("condicao", condicao);
         request.setAttribute("imc", im);
-        
+
         RequestDispatcher res = request.getRequestDispatcher("result.jsp");
 
         res.forward(request, response);

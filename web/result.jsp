@@ -31,7 +31,7 @@
                 <input type="text" class="form-control" readonly value="<% out.print(imc);%>">
             </div>
 
-            <a href="/calculoIMC">Voltar</a>
+            <a href="/calculoimc">Voltar</a>
         </div>
     </body>
 </html>
